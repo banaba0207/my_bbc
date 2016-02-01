@@ -5,10 +5,18 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 class Article extends Model
-{   
-    // @var string
-    protected $table = 'articles';
+{
+    protected $fillable = ['title', 'body', 'published_at'];
 
-    //@var array
-    protected $fillable = ['title', 'body'];
+//    public function getTitleAttribute($value){
+//        return mb_strtoupper($value);
+//    }
+
+//    public function setBodyAttribute($value)
+//    {
+//        $this->attributes['title'] = mb_strtolower($value);
+//    }
+
+    //published_at で日付ミューテーターを使う
+    protected $dates = ['published_at'];
 }

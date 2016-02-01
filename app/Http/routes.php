@@ -19,6 +19,10 @@ Route::get('index', 'WelcomeController@index');
 Route::get('about', 'WelcomeController@about');
 Route::get('contact', 'WelcomeController@contact');
 
+Route::get('articles', 'ArticlesController@index');
+Route::get('articles/{id}', 'ArticlesController@show');
+
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
