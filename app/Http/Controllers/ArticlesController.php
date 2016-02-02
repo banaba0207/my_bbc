@@ -9,11 +9,15 @@ use App\Article;
 use Illuminate\Http\Request;
 use App\Http\Requests\ArticleRequest;
 
+use Carbon\Carbon;
+
 class ArticlesController extends Controller
 {
     public function index() {
-        $articles = Article::all();
-
+//        $articles = Article::all();
+        $articles = Article::latest('published_at')
+            ->published()
+            ->get();
         return view('articles.index', compact('articles'));
     }
 
