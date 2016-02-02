@@ -25,12 +25,12 @@ class DatabaseSeeder extends Seeder{
 class ArticlesTableSeeder extends Seeder{
     public function run(){
         DB::table('articles')->delete();
-        $faker = Faker::create('en_US');
+        $faker = Faker::create('ja_JP');
         for ($i = 0; $i < 10; $i++) {
             Article::create([
-                'title' => $faker->sentence(),
-//                'body' => $faker->paragraph(),
-                'body' => $i,
+                'title' => $faker->name(),
+                'body' => $faker->address(),
+//                'body' => $i,
                 'published_at' => Carbon::today()
             ]);
         }
