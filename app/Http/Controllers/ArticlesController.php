@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
-use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Article;
+
+use Illuminate\Http\Request;
+use App\Http\Requests\ArticleRequest;
 
 class ArticlesController extends Controller
 {
@@ -26,10 +26,9 @@ class ArticlesController extends Controller
         return view('articles.create');
     }
 
-    public function store(){
-        $inputs = \Request::all();
-
-        Article::create($inputs);
+    //    public function store(ArticleRequest $request){
+    public function store(ArticleRequest $request){
+        Article::create($request->all());
 
         return redirect('articles');
     }

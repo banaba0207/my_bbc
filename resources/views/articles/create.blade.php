@@ -3,6 +3,17 @@
 @section('content')
     <h1>Write a New Article</h1>
     <hr/>
+    
+    @if (isset($errors) && count($errors) > 0)
+        <div class="alert alert-danger">
+                <ul>
+                            @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
+
     {!! Form::open(['url' => 'articles']) !!}
         <div class="form-group">
             {!! Form::label('title', 'Title:') !!}
@@ -24,6 +35,4 @@
         </div>
 
     {!! Form::close() !!}
-{{-- 
---}}
 @endsection
