@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\DB;
 
 use Faker\Factory as Faker;
 use Carbon\Carbon;
-use App\Article;
+use App\Post;
 
 class DatabaseSeeder extends Seeder{
     /**
@@ -17,20 +17,19 @@ class DatabaseSeeder extends Seeder{
     public function run()
     {
         Model::unguard();  // 
-        $this->call(ArticlesTableSeeder::class);
+        $this->call(PostsTableSeeder::class);
         Model::reguard();  // 
     }
 }
 
-class ArticlesTableSeeder extends Seeder{
+class PostsTableSeeder extends Seeder{
     public function run(){
         DB::table('articles')->delete();
         $faker = Faker::create('ja_JP');
         for ($i = 0; $i < 20; $i++) {
-            Article::create([
+            Post::create([
                 'title' => $faker->name(),
-                'body' => $faker->address(),
-//                'body' => $i,
+                'body' => $faker->address() + $faker->address(),
                 'published_at' => Carbon::today()
             ]);
         }

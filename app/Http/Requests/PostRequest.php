@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
 
-class ArticleRequest extends Request
+class PostRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,7 +25,7 @@ class ArticleRequest extends Request
     {
         return [
             'title' => 'required|min:3',
-            'body'  => 'required',
+            'body'  => 'required|max:500',
             'published_at' => 'required|date',
         ];
     }

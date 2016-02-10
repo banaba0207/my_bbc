@@ -5,7 +5,7 @@ namespace App;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
-class Article extends Model
+class Post extends Model
 {
     protected $fillable = ['title', 'body', 'published_at'];
 
