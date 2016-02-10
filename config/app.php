@@ -158,6 +158,9 @@ return [
         
         // Add rookieLaravel5
         Collective\Html\HtmlServiceProvider::class,
+    
+        // For Flash message
+        Laracasts\Flash\FlashServiceProvider::class,
     ],
 
     /*
@@ -207,6 +210,8 @@ return [
         //Add rookieLaravel5
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
+
+        'Flash' => Laracasts\Flash\Flash::class,
     ],
 
 ];

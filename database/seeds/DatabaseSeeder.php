@@ -26,7 +26,7 @@ class ArticlesTableSeeder extends Seeder{
     public function run(){
         DB::table('articles')->delete();
         $faker = Faker::create('ja_JP');
-        for ($i = 0; $i < 10; $i++) {
+        for ($i = 0; $i < 20; $i++) {
             Article::create([
                 'title' => $faker->name(),
                 'body' => $faker->address(),

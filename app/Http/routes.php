@@ -12,18 +12,24 @@
 */
 
 Route::group(['middleware' => ['web']], function () {
-    Route::get('articles', 'ArticlesController@index');
+//    Route::get('articles', 'ArticlesController@index');
+//    Route::get('articles/create', 'ArticlesController@create');
+//    Route::get('articles/{id}', 'ArticlesController@show');
+//    Route::post('articles', 'ArticlesController@store');
+//    Route::get('articles/{id}/edit', 'ArticlesController@edit');
+//    Route::patch('articles/{id}', 'ArticlesController@update');
+//    Route::delete('articles/{id}', 'ArticlesController@destroy');
 
-    Route::get('articles/create', 'ArticlesController@create');
+//    Route::get('articles', ['as' => 'articles.index', 'uses' => 'ArticlesController@index']);
+//    Route::get('articles/create', ['as' => 'articles.create', 'uses' => 'ArticlesController@create']);
+//    Route::get('articles/{id}', ['as' => 'articles.show', 'uses' => 'ArticlesController@show']);
+//    Route::post('articles', ['as' => 'articles.store', 'uses' => 'ArticlesController@store']);
+//    Route::get('articles/{id}/edit', ['as' => 'articles.edit', 'uses' => 'ArticlesController@edit']);
+//    Route::patch('articles/{id}', ['as' => 'articles.update', 'uses' => 'ArticlesController@update']);
+//    Route::delete('articles/{id}', ['as' => 'articles.destroy', 'uses' => 'ArticlesController@destroy']);
 
-    Route::get('articles/{id}', 'ArticlesController@show');
-
-    Route::post('articles', 'ArticlesController@store');
-
-    Route::get('articles/{id}/edit', 'ArticlesController@edit');  // 追加
-    Route::patch('articles/{id}', 'ArticlesController@update');  // 追加
-    Route::delete('articles/{id}', 'ArticlesController@destroy');  // 追加
-    Route::get('prime/{num}', 'MathController@show');
+    Route::get('/', 'ArticlesController@index');
+    Route::resource('articles', 'ArticlesController');
 });
 /*
 |--------------------------------------------------------------------------

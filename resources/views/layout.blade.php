@@ -8,14 +8,28 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
 </head>
+
+<style type="text/css">
+<!--
+body {
+    padding-top: 70px;
+}
+-->
+</style>
+
 <body>
+
+    @include('navbar')
     <div class="container">
+        {{--
         @if (Session::has('flash_message'))
             <div class='alert alert-success'>
                 {{ Session::get('flash_message') }}
             </div>
         @endif
+        --}}
 
+        @include('flash::message')
         @yield('content')
     </div>
 
