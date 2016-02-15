@@ -5,6 +5,8 @@
     <hr/>
 
     {!! link_to('posts/create', '新規作成', ['class' => 'btn btn-primary']) !!}
+   
+    <br><br>
 
     @foreach($posts as $post)
         <post>
@@ -21,6 +23,14 @@
                         {{ $post->body }}
                     </div>
                 </div>
+                {{-- Image view start --}}
+                @if (!empty($post->fig_orig))
+                    <?php
+                    $image_base64 = base64_encode($post->fig_orig);
+                    ?>
+                    <img src='data:img/png;base64,{{$image_base64}}'>
+                @endif
+                {{-- Image view end --}}
             </div>
         </post>
     @endforeach

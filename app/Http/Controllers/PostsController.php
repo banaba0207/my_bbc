@@ -9,12 +9,14 @@ use App\Post;
 use Illuminate\Http\Request;
 use App\Http\Requests\PostRequest;
 
+use Input;
+
 use Carbon\Carbon;
 
 class PostsController extends Controller
 {
     public function index() {
-        $posts = Post::latest('published_at')
+        $posts = Post::latest('updated_at')
             ->published()
             ->get();
         return view('posts.index', compact('posts'));
@@ -30,7 +32,17 @@ class PostsController extends Controller
     }
 
     public function store(PostRequest $request){
-        Post::create($request->all());
+//        Post::create($request->all());
+        $this->post = new Post();
+        $this->post->fill($request->all());
+
+//        $title = mb_convert_encoding($this->post->title,"UTF-8", "auto");
+//        return $title;
+//        
+        $image = Input::file('data');
+        if(!empty($image)) $this->post->fig_orig = file_get_contents($image);
+        $this->post->save();
+
         \Flash::success('記事が投稿されました。');
         return redirect()->route('posts.index');
     }

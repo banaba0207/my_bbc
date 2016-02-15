@@ -26,7 +26,6 @@ class PostRequest extends Request
         return [
             'title' => 'required|min:3',
             'body'  => 'required|max:500',
-            'published_at' => 'required|date',
         ];
     }
 }

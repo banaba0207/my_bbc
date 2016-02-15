@@ -1,17 +1,17 @@
 @extends('layout')
 
 @section('content')
-    <h1>{{ $article->title }}</h1>
+    <h1>{{ $post->title }}</h1>
     <hr/>
 
-    <article>
-        <div class = "body">{{ $article->body }}</div>
-    </article>
-    {!! link_to(action('ArticlesController@edit', [$article->id]), '編集', ['class' => 'btn btn-primary']) !!}
+    <post>
+        <div class = "body">{{ $post->body }}</div>
+    </post>
+    {!! link_to(action('PostsController@edit', [$post->id]), '編集', ['class' => 'btn btn-primary']) !!}
 
     <br/>
     <br/>
 
-    {!! delete_form(['articles', $article->id]) !!}
+    {!! delete_form(['posts', $post->id]) !!}
 
 @endsection
