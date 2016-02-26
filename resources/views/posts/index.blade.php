@@ -1,12 +1,9 @@
 @extends('layout')
 
 @section('content')
-    <h1>posts</h1>
+    <h1>記事一覧</h1>
     <hr/>
 
-    {!! link_to('posts/create', '新規作成', ['class' => 'btn btn-primary']) !!}
-   
-    <br><br>
 
     @foreach($posts as $post)
         <post>

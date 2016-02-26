@@ -26,12 +26,11 @@ class PostsTableSeeder extends Seeder{
     public function run(){
         DB::table('articles')->delete();
         $faker = Faker::create('ja_JP');
-        for ($i = 0; $i < 100; $i++) {
+        for ($i = 0; $i < 200; $i++) {
             Post::create([
-                'title' => $faker->sentence(),
+                'title'       => $faker->sentence(),
                 'contributor' => $faker->name(),
-                'body' => $faker->text,
-//                'published_at' => Carbon::today()
+                'body'        => $faker->text,
             ]);
         }
     }

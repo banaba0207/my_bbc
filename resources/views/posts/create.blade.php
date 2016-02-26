@@ -4,7 +4,7 @@
 <?PHP
 header("Content-type: text/html; charset=UTF-8");
 ?>
-    <h1>Write a New post</h1>
+    <h1>新規記事作成</h1>
     <hr/>
     
     @if (isset($errors) && count($errors) > 0)
