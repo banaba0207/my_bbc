@@ -16,14 +16,14 @@ use Carbon\Carbon;
 class PostsController extends Controller
 {
     public function index() {
-        $posts = Post::latest('updated_at')
-            ->published()
+        $posts = Post::where('res_id', '=', '0')
+            ->latest('updated_at')
             ->get();
         return view('posts.index', compact('posts'));
     }
 
     public function show($id){
-//        $post = Post::findOrFail($id);
+        //        $post = Post::findOrFail($id);
         $posts = Post::where('post_id', '=', $id)->get();
         return view('posts.show', compact('posts'));
     }
@@ -33,10 +33,18 @@ class PostsController extends Controller
     }
 
     public function store(PostRequest $request){
-//        Post::create($request->all());
+        //        Post::create($request->all());
         $this->post = new Post();
         $this->post->fill($request->all());
-        $this->post->post_id = $_POST['post_id'];
+
+        $tmp_post_id = $_POST['post_id'];
+        if ( $tmp_post_id == '-1') { //新規作成
+            $this->post->post_id = Post::max('post_id') + 1;
+            $this->post->res_id = 0;
+        } else {
+            $this->post->post_id = $tmp_post_id;
+            $this->post->res_id = Post::where('post_id', '=', $tmp_post_id)->max('res_id') + 1;
+        }
 
         $image = Input::file('data');
         if(!empty($image)) $this->post->fig_orig = file_get_contents($image);

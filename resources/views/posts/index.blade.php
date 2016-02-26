@@ -10,8 +10,8 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h2 class="panel-title">
-                        【{{ $post->id }}】　　
-                        <a href="{{url('posts', $post->id) }}">
+                        【{{ $post->post_id }}】　　
+                        <a href="{{url('posts', $post->post_id) }}">
                             <font size="5" color="ff0000"><b>{{ $post->title }}</b></font>
                         </a>
                         　　投稿者名: {{ $post->contributor }}

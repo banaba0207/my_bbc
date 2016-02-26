@@ -7,7 +7,8 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h2 class="panel-title">
-                        【{{ $post->id }}】　　
+                        【{{ $post->post_id }}】
+                        【{{ $post->res_id }}】　　
                         <a href="{{url('posts', $post->id) }}">
                             <font size="5" color="ff0000"><b>{{ $post->title }}</b></font>
                         </a>
@@ -39,4 +40,10 @@
 
     <hr/>
 
+    {{--
+    --}}
+    {!! Form::open(['route' => 'posts.store', 'files' => true]) !!}
+    <input type="hidden" name="post_id" value= {{ $posts[0]['post_id'] }} >
+    @include('posts.form', ['title' => "Re:".$posts[0]['title'], 'submitButton' => 'Add post'])
+    {!! Form::close() !!}
 @endsection
