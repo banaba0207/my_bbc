@@ -24,7 +24,6 @@ class DatabaseSeeder extends Seeder{
 
 class PostsTableSeeder extends Seeder{
     public function run(){
-        DB::table('articles')->delete();
         $faker = Faker::create('ja_JP');
         for ($i = 0; $i < 200; $i++) {
             Post::create([

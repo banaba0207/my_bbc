@@ -18,6 +18,6 @@ header("Content-type: text/html; charset=UTF-8");
     @endif
 
     {!! Form::open(['route' => 'posts.store', 'files' => true]) !!}
-    @include('posts.form', ['published_at' => date('Y-m-d-H-i-s'), 'submitButton' => 'Add post'])
+    @include('posts.form', ['title' => null, 'submitButton' => 'Add post'])
     {!! Form::close() !!}
 @endsection
