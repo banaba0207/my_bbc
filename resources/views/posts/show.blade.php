@@ -57,10 +57,14 @@
         </div>
     </post>
     {!! link_to(action('PostsController@edit', [$post->id]), '編集', ['class' => 'btn btn-primary']) !!}
-
     <br/>
     <br/>
-
     {!! delete_form(['posts', $post->id]) !!}
 
+    <hr/>
+
+    @include('errors.form_errors')
+    {!! Form::model($post, ['method' => 'POST', 'url' => ['posts', $post->id]]) !!}
+    @include('posts.form', ['title' => "Re:".$post->title, 'submitButton' => 'Edit post'])
+    {!! Form::close() !!}
 @endsection
