@@ -9,9 +9,7 @@
                     <h2 class="panel-title">
                         【{{ $post->post_id }}】
                         【{{ $post->res_id }}】　　
-                        <a href="{{url('posts', $post->id) }}">
-                            <font size="5" color="ff0000"><b>{{ $post->title }}</b></font>
-                        </a>
+                        <font size="5" color="ff0000"><b>{{ $post->title }}</b></font>
                         　　投稿者名: {{ $post->contributor }}
                         　　投稿日時: {{ $post->created_at }}
                     </h2>
@@ -31,9 +29,11 @@
                     </div>
                 @endif
                 {{-- Image view end --}}
+
+                <div class="btn-group">
                 {!! link_to(action('PostsController@edit', [$post->id]), '編集', ['class' => 'btn btn-primary']) !!}
-                <br/>
                 {!! delete_form(['posts', $post->id]) !!}
+                </div>
             </div>
         </post>
     @endforeach
@@ -44,6 +44,6 @@
     --}}
     {!! Form::open(['route' => 'posts.store', 'files' => true]) !!}
     <input type="hidden" name="post_id" value= {{ $posts[0]['post_id'] }} >
-    @include('posts.form', ['title' => "Re:".$posts[0]['title'], 'submitButton' => 'Add post'])
+    @include('posts.form', ['title' => "Re: ".$posts[0]['title'], 'submitButton' => 'Add post'])
     {!! Form::close() !!}
 @endsection

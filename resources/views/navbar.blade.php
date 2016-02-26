@@ -12,7 +12,6 @@
             </button>
 
             <!-- ブランド表示 -->
-            <a class="navbar-brand" href="/public">My Blog</a>
         </div>
 
         <!-- メニュー -->
@@ -21,25 +20,8 @@
             <ul class="nav navbar-nav">
                 <li>{!! link_to_route('posts.index', '記事一覧') !!}</li>
                 <li>{!! link_to_route('posts.create', '新規記事作成') !!}</li>
-                <li><a href="/contact">Contact</a></li>
-                <li><a href="/about">About</a></li>
             </ul>
 
-            <!-- 右寄せメニュー -->
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Login</a></li>
-                <li><a href="#">Register</a></li>
-
-                <!-- ドロップダウンメニュー -->
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">User Name <span class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">Profile</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">Logout</a></li>
-                    </ul>
-                </li>
-            </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
