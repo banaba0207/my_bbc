@@ -13,9 +13,12 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h2 class="panel-title">
+                        【{{ $post->id }}】　　
                         <a href="{{url('posts', $post->id) }}">
-                            {{ $post->title }}
+                            <font size="5" color="ff0000"><b>{{ $post->title }}</b></font>
                         </a>
+                        　　投稿者名: {{ $post->contributor }}
+                        　　投稿日時: {{ $post->created_at }}
                     </h2>
                 </div>
                 <div class='panel-boby'>

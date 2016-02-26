@@ -12,14 +12,15 @@
             </button>
 
             <!-- ブランド表示 -->
-            <a class="navbar-brand" href="/">My Blog</a>
+            <a class="navbar-brand" href="/public">My Blog</a>
         </div>
 
         <!-- メニュー -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <!-- 左寄せメニュー -->
             <ul class="nav navbar-nav">
-                <li>{!! link_to_route('posts.index', 'Blog') !!}</li>
+                <li>{!! link_to_route('posts.index', '記事一覧') !!}</li>
+                <li>{!! link_to_route('posts.create', '新規記事作成') !!}</li>
                 <li><a href="/contact">Contact</a></li>
                 <li><a href="/about">About</a></li>
             </ul>
