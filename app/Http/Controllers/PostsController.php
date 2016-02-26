@@ -51,7 +51,13 @@ class PostsController extends Controller
         $this->post->save();
 
         \Flash::success('記事が投稿されました。');
-        return redirect()->route('posts.index');
+
+
+        if ( $tmp_post_id == '-1') { //新規作成
+            return redirect()->route('posts.index');
+        }
+        return redirect()->route('posts.show', [$tmp_post_id]);
+
     }
 
     public function edit($id){
