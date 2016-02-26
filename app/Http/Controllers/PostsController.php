@@ -36,6 +36,7 @@ class PostsController extends Controller
 //        Post::create($request->all());
         $this->post = new Post();
         $this->post->fill($request->all());
+        $this->post->post_id = $_POST['post_id'];
 
         $image = Input::file('data');
         if(!empty($image)) $this->post->fig_orig = file_get_contents($image);
