@@ -23,8 +23,9 @@ class PostsController extends Controller
     }
 
     public function show($id){
-        $post = Post::findOrFail($id);
-        return view('posts.show', compact('post'));
+//        $post = Post::findOrFail($id);
+        $posts = Post::where('post_id', '=', $id)->get();
+        return view('posts.show', compact('posts'));
     }
 
     public function create(){
