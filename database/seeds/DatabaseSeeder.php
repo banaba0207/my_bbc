@@ -26,11 +26,15 @@ class PostsTableSeeder extends Seeder{
     public function run(){
         $faker = Faker::create('ja_JP');
         for ($i = 0; $i < 200; $i++) {
-            Post::create([
-                'title'       => $faker->sentence(),
-                'contributor' => $faker->name(),
-                'body'        => $faker->text,
-            ]);
+            for ($j = 0; $j < 3; $j++) {
+                Post::create([
+                    'title'       => $faker->sentence(),
+                    'post_id'     => $i,
+                    'res_id'      => $j,
+                    'contributor' => $faker->name(),
+                    'body'        => $faker->text,
+                ]);
+            }
         }
     }
 }
