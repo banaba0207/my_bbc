@@ -28,8 +28,9 @@ class PostsTableSeeder extends Seeder{
         $faker = Faker::create('ja_JP');
         for ($i = 0; $i < 100; $i++) {
             Post::create([
-                'title' => $faker->name(),
-                'body' => $faker->address() + $faker->address(),
+                'title' => $faker->sentence(),
+                'contributor' => $faker->name(),
+                'body' => $faker->text,
 //                'published_at' => Carbon::today()
             ]);
         }
