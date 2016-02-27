@@ -48,8 +48,19 @@ class PostsController extends Controller
 
         $image = Input::file('data');
         if(!empty($image)) {
-            $this->post->fig_orig = file_get_contents($image);
             $this->post->fig_mime = $image->getMimeType();
+            switch ($this->post->fig_mime) {
+            case "image/jpeg": $flag = TRUE; break;
+            case "image/png": $flag = TRUE; break;
+            case "image/gif": $flag = TRUE; break;
+            default: $flag = FALSE;
+            }
+            if ($flag == FALSE) {
+                \Flash::error('アップロード可能な画像ファイルは jpg, png, gif のみです。');
+                return redirect()->back();
+            }
+
+            $this->post->fig_orig = file_get_contents($image);
         }
 
         $this->post->save();

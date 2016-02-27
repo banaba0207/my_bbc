@@ -25,9 +25,7 @@
                     $image_base64 = base64_encode($post->fig_orig);
                     ?>
                     <div style="padding:10px">
-                    {{--
                     <img src='data:{{ $post->fig_mime }};base64,{{$image_base64}}'>
-                    --}}
                     </div>
                 @endif
                 {{-- Image view end --}}
