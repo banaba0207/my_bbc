@@ -25,14 +25,18 @@
                     $image_base64 = base64_encode($post->fig_orig);
                     ?>
                     <div style="padding:10px">
-                    <img src='data:img/png;base64,{{$image_base64}}'>
+                    {{--
+                    <img src='data:{{ $post->fig_mime }};base64,{{$image_base64}}'>
+                    --}}
                     </div>
                 @endif
                 {{-- Image view end --}}
 
+                <div align="right">
                 <div class="btn-group">
                 {!! link_to(action('PostsController@edit', [$post->id]), '編集', ['class' => 'btn btn-primary']) !!}
                 {!! delete_form(['posts', $post->id]) !!}
+                </div>
                 </div>
             </div>
         </post>

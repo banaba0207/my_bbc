@@ -47,7 +47,11 @@ class PostsController extends Controller
         }
 
         $image = Input::file('data');
-        if(!empty($image)) $this->post->fig_orig = file_get_contents($image);
+        if(!empty($image)) {
+            $this->post->fig_orig = file_get_contents($image);
+            $this->post->fig_mime = $image->getMimeType();
+        }
+
         $this->post->save();
 
         \Flash::success('記事が投稿されました。');

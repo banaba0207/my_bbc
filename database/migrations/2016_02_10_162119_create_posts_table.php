@@ -20,6 +20,7 @@ class CreatePostsTable extends Migration
             $table->string('title');
             $table->string('body');
             $table->string('fig_name')->nullable();
+            $table->string('fig_mime')->nullable();
             $table->binary('fig_orig')->nullable();
             $table->binary('fig_thumbnail')->nullable();
             $table->timestamps();

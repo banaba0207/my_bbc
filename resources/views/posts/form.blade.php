@@ -11,15 +11,10 @@
     {!! Form::textarea('body', "", ['class' => 'form-control']) !!}
 </div>
 
-{{--
 <div class="form-group">
-    {!! Form::label('published_at', 'Publish On:') !!}
-    {!! Form::input('date', 'published_at', $published_at, ['class' => 'form-control']) !!}
-</div>
-
---}}
     {!! Form::label('fig_orig', 'Figure:') !!}
     {!! Form::file('data') !!}
+</div>
 
 <br>
 
