@@ -20,12 +20,10 @@
                     </div>
                 </div>
                 {{-- Image view start --}}
-                @if (!empty($post->fig_orig))
-                    <?php
-                    $image_base64 = base64_encode($post->fig_orig);
-                    ?>
+                @if (!empty($post->fig_name))
                     <div style="padding:10px">
-                    <img src='data:{{ $post->fig_mime }};base64,{{$image_base64}}'>
+                        <img src="http://localhost/my_bbc/public/media/mini/{{ $post->fig_name}}"
+                            alt="test" height="120" width="120">
                     </div>
                 @endif
                 {{-- Image view end --}}

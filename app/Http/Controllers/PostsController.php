@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\PostRequest;
 
 use Input;
-
+use Image;
 use Carbon\Carbon;
 
 class PostsController extends Controller
@@ -60,13 +60,19 @@ class PostsController extends Controller
                 return redirect()->back();
             }
 
-            $this->post->fig_orig = file_get_contents($image);
+            $name = md5(sha1(uniqid(mt_rand(), true))).'.'.$image->getClientOriginalExtension();
+            $upload = $image->move('media', $name);
+
+            #サムネイル作成
+            Image::make('media/'.$name)
+                ->resize(120, 120)
+                ->save('media/mini/'.$name);
+            $this->post->fig_name = $name;
+//            $this->post->fig_orig = file_get_contents($image);
         }
 
         $this->post->save();
-
         \Flash::success('記事が投稿されました。');
-
 
         if ( $tmp_post_id == '-1') { //新規作成
             return redirect()->route('posts.index');
