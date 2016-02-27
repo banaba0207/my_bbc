@@ -161,6 +161,8 @@ return [
     
         // For Flash message
         Laracasts\Flash\FlashServiceProvider::class,
+
+        Barryvdh\Debugbar\ServiceProvider::class,
     ],
 
     /*
@@ -213,6 +215,7 @@ return [
         'Html' => Collective\Html\HtmlFacade::class,
 
         'Flash' => Laracasts\Flash\Flash::class,
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
     ],
 
 ];
