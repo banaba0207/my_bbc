@@ -22,8 +22,11 @@
                 {{-- Image view start --}}
                 @if (!empty($post->fig_name))
                     <div style="padding:10px">
+                        <a href="http://localhost/my_bbc/public/media/{{ $post->fig_name}}" 
+                            data-lightbox="image-1">
                         <img src="http://localhost/my_bbc/public/media/mini/{{ $post->fig_name}}"
-                            alt="test" height="120" width="120">
+                            alt="test" height="120" width="120"/>
+                        </a>
                     </div>
                 @endif
                 {{-- Image view end --}}
