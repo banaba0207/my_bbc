@@ -65,7 +65,7 @@ class PostsController extends Controller
 
             #サムネイル作成
             Image::make('media/'.$name)
-                ->resize(120, 120)
+                ->resize(400, 400)
                 ->save('media/mini/'.$name);
             $this->post->fig_name = $name;
 //            $this->post->fig_orig = file_get_contents($image);
