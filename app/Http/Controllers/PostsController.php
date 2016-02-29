@@ -46,6 +46,9 @@ class PostsController extends Controller
             $this->post->res_id = Post::where('post_id', '=', $tmp_post_id)->max('res_id') + 1;
         }
 
+        if($this->post->contributor == null || $this->post->contributor == "") {
+            $this->post->contributor = 'No name';
+        }
         $image = Input::file('data');
         if(!empty($image)) {
             $this->post->fig_mime = $image->getMimeType();
@@ -90,7 +93,7 @@ class PostsController extends Controller
         $post = Post::findOrFail($id);
         $post->update($request->all());
         \Flash::success('記事を更新しました。');
-        return redirect()->route('posts.show', [$post->id]);
+        return redirect()->route('posts.show', [$post->pots_id]);
     }
 
     public function destroy($id){

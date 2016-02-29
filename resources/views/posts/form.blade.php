@@ -4,11 +4,11 @@
 </div>
 <div class="form-group">
     {!! Form::label('contributor', 'Contributor:') !!}
-    {!! Form::text('contributor', "No name", ['class' => 'form-control']) !!}
+    {!! Form::text('contributor', null, ['class' => 'form-control']) !!}
 </div>
 <div class="form-group">
     {!! Form::label('body', 'Body:') !!}
-    {!! Form::textarea('body', "", ['class' => 'form-control']) !!}
+    {!! Form::textarea('body', null, ['class' => 'form-control']) !!}
 </div>
 
 <div class="form-group">

@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-    <h1>Edit: {{ $post->title }}</h1>
+    <h1>記事編集: {{ $post->title }}</h1>
 
     <hr/>
 
