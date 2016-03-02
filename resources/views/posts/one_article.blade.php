@@ -8,7 +8,7 @@
             <h2 class="panel-title">
                 【{{ $post->post_id }}】
                 【{{ $post->res_id }}】　
-                <a href="posts/{{ $post->post_id }}">
+                <a href="{{ action('PostsController@edit', $post->post_id) }}">
                     <font size="5" color="ff0000"><b>{{ $post->title }}</b></font>
                 </a>
                 <br><br>
@@ -20,6 +20,7 @@
                     <font size="3" color="1253A4"><b>記事詳細</b></font>
                 </a>
                 @endif
+                <a href="posts/{{ $post->post_id }}/edit">
                 <a href="posts/{{ $post->post_id }}/edit">
                     <font size="3" color="1253A4"><b>編集</b></font>
                 </a>
