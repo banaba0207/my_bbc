@@ -2,6 +2,9 @@
 
 @section('content')
     <h1>記事一覧</h1>
+        <a href="{{url('public') }}">
+            <font size="5" color="ff0000"><b>test</b></font>
+        </a>
     <hr/>
 
 
@@ -24,11 +27,14 @@
                     </div>
                 </div>
                 {{-- Image view start --}}
-                @if (!empty($post->fig_orig))
-                    <?php
-                    $image_base64 = base64_encode($post->fig_orig);
-                    ?>
-                    <img src='data:img/png;base64,{{$image_base64}}'>
+                @if (!empty($post->fig_name))
+                    <div style="padding:10px">
+                        <a href="media/{{ $post->fig_name}}"
+                            data-lightbox="image-1" />
+                        <img src="media/mini/{{ $post->fig_name}}"
+                            alt="test" height="400" width="400"/>
+                        </a>
+                    </div>
                 @endif
                 {{-- Image view end --}}
             </div>
