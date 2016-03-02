@@ -15,6 +15,11 @@
                         <font size="5" color="ff0000"><b>{{ $post->title }}</b></font>
                         　　投稿者名: {{ $post->contributor }}
                         　　投稿日時: {{ $post->created_at }}
+                        @if ($post->res_id == 0)
+                        <a href="posts/{{ $post->post_id }}">
+                            <font size="3" color="ff0000"><b>記事詳細</b></font>
+                        </a>
+                        @endif
                     </h2>
                 </div>
                 <div class='panel-boby'>
