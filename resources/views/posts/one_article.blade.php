@@ -33,9 +33,9 @@
         {{-- Image view start --}}
         @if (!empty($post->fig_name))
             <div style="padding:10px">
-                <a href="media/{{ $post->fig_name}}"
+                <a href="{{ asset('media/'.$post->fig_name) }}"
                     data-lightbox="image-1" />
-                <img src="media/mini/{{ $post->fig_name}}"
+                <img src="{{ asset('media/mini/'.$post->fig_name) }}"
                     alt="{{ $post->fig_name }}" height="400" width="400"/>
                 </a>
             </div>
