@@ -19,6 +19,6 @@ header("Content-type: text/html; charset=UTF-8");
 
     {!! Form::open(['route' => 'posts.store', 'files' => true]) !!}
     <input type="hidden" name="post_id" value="-1" >
-    @include('posts.form', ['title' => null, 'submitButton' => 'Add post'])
+    @include('posts.form', ['title' => null, 'submitButton' => '投稿する'])
     {!! Form::close() !!}
 @endsection
