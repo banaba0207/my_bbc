@@ -25,7 +25,7 @@ class DatabaseSeeder extends Seeder{
 class PostsTableSeeder extends Seeder{
     public function run(){
         $faker = Faker::create('ja_JP');
-        for ($i = 1; $i <= 10; $i++) {
+        for ($i = 1; $i <= 100; $i++) {
             for ($j = 0; $j < 3; $j++) {
                 Post::create([
                     'title'       => $faker->sentence(),
@@ -35,6 +35,7 @@ class PostsTableSeeder extends Seeder{
                     'body'        => $faker->text,
                 ]);
             }
+            sleep(1);
         }
     }
 }
