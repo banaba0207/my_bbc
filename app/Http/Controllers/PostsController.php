@@ -50,6 +50,11 @@ class PostsController extends Controller
             $this->post->contributor = 'No name';
         }
         $image = Input::file('data');
+//        dd(var_dump($image));
+        if ($image->getClientSize() > 10000000) {
+                \Flash::error('アップロードは10M以下の画像ファイル(ipg, png, gif)のみです。');
+                return redirect()->back();
+        }
         if(!empty($image)) {
             $this->post->fig_mime = $image->getMimeType();
             switch ($this->post->fig_mime) {
