@@ -19,6 +19,7 @@ class PostsController extends Controller
         $posts = Post::where('res_id', '=', '0')
             ->latest('updated_at')
             ->get();
+//        dd(var_dump($posts[0]));
         return view('posts.index', compact('posts'));
     }
 

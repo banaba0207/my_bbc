@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <h1>新規記事作成: {{ $posts[0]->title }}</h1>
+    <h1>記事詳細: {{ $posts[0]->title }}</h1>
 
     <hr/>
     @foreach($posts as $post)
