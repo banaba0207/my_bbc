@@ -8,11 +8,15 @@
     }else {
         $page = 0;
     }
-    $show_num = 10;
+    if (!empty($_GET['show_num'])) {
+        $show_num = $_GET['show_num'];
+    }else {
+        $show_num = 10;
+    }
     $maxid = count($posts) - 1;
     print("posts:{$maxid}<br>");
     for ($i = 0; $i <= ceil($maxid / $show_num) - 1; ++$i) {
-        print("<a href='?page=$i'>");
+        print("<a href='?page=$i&show_num=$show_num'>");
         if ($i != $page){
             print("$i");
         }else{
