@@ -1,12 +1,13 @@
 <?php
 $maxpage = ceil($maxid / $show_num) - 1;
 
-print("<div align='right'>");
+print("<div align='left'>");
 //    print("<table border='5' cellspacing='30' cellpadding='0'>");
-    print("<table>");
-        print("<tr>");
-            print("<td>");
-    //表示件数用アクションボタン {{{
+print("<table>");
+print("<tr>");
+print("<td>");
+
+//表示件数用アクションボタン {{{
 print("表示件数: ");
 print("<!-- Single button -->");
 print("<div class='btn-group'>");
@@ -21,9 +22,10 @@ foreach($num_array as $j) {
 print("</ul>");
 print("</div>");
 //表示件数用アクションボタン終了 }}}
-            print("</td>");
-            print("<td>　　</td>");
-            print("<td>");
+
+print("</td>");
+print("<td>　　</td>");
+print("<td>");
 
 //ページネーションの実装 {{{
 //bootstrapのページネーションの使用準備
@@ -56,7 +58,7 @@ print("</ul>");
 print("</nav></div>");
 //ページネーション終了 }}}
 
-            print("</td>");
+print("</td>");
 print("</tr>");
 print("</table>");
 print("</div>");

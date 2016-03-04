@@ -37,7 +37,6 @@ class PostsController extends Controller
         //        Post::create($request->all());
         $this->post = new Post();
         $this->post->fill($request->all());
-        dd(var_dump($request->ip()));
         $tmp_post_id = $_POST['post_id'];
         if ( $tmp_post_id == '-1') { //新規作成
             $this->post->post_id = Post::max('post_id') + 1;
