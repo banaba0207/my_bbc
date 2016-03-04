@@ -48,8 +48,24 @@
     print("</ul>");
 
     print("</nav></div>");
-    print("<hr/>");
     //ページネーション終了
+
+    //表示件数用アクションボタン
+    print("<!-- Single button -->");
+    print("<div class='btn-group'>");
+    print("<button type='button' class='btn btn-default dropdown-toggle' data-toggle='dropdown'>");
+    print("10 <span class='caret'></span>");
+    print("</button>");
+    print("<ul class='dropdown-menu' role='menu'>");
+    $num_array = [10, 20, 50, 100];
+    foreach($num_array as $j) {
+        print("<li><a href='?page=0&show_num=$j'>$j</a></li>");
+    }
+    print("</ul>");
+    print("</div>");
+    //表示件数用アクションボタン終了
+
+    print("<hr/>");
 ?>
 
     @for ($i = $show_num * $page; $i < $show_num * ($page + 1); ++$i)
