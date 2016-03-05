@@ -6,8 +6,11 @@
 
     <!-- CSSを追加 --><!-- 追加1 -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!-- Use lightbox -->
     <link href="http://localhost/my_bbs/lightbox2/dist/css/lightbox.css" type="text/css" rel="stylesheet" media="all" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
 </head>
 
 <style type="text/css">
