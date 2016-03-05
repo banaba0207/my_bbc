@@ -11,6 +11,7 @@
     <link href="http://localhost/my_bbs/lightbox2/dist/css/lightbox.css" type="text/css" rel="stylesheet" media="all" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <style type="text/css">
@@ -18,6 +19,11 @@
 body {
     padding-top: 70px;
     font-size:20px;
+}
+<!-- For スマホ -->
+img {
+     max-width: 100%;
+     height: auto;
 }
 -->
 </style>
