@@ -29,7 +29,7 @@ print("<tr><td>");
 print("あなたの最高音");
 print("<form method='get' action=''>");
 print("<p>");
-print("<select name='origkey'>");
+print("<select name='origkey' class='form-control'>");
 foreach ($oniki as $oto) {
     if ($oto === $origkey)
         print("<option value='$oto' selected>$oto</option>");
@@ -45,7 +45,7 @@ print("</td><td>　　</td><td>");
 //adkeyフォーム {{{
 print("歌いたい曲の最高音");
 print("<p>");
-print("<select name='adkey'>");
+print("<select name='adkey' class='form-control'>");
 foreach ($oniki as $oto) {
     if ($oto === $adkey)
         print("<option value='$oto' selected>$oto</option>");

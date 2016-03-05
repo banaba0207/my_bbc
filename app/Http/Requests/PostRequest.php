@@ -25,6 +25,7 @@ class PostRequest extends Request
     {
         return [
             'title' => 'required|min:3|max:50',
+            'contributor' => 'max:50',
             'body'  => 'required|max:500',
         ];
     }
