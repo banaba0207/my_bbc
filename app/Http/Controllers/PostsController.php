@@ -12,6 +12,7 @@ use App\Http\Requests\PostRequest;
 use Input;
 use Image;
 use Carbon\Carbon;
+use File; //For delete file
 
 class PostsController extends Controller
 {
@@ -103,6 +104,8 @@ class PostsController extends Controller
 
     public function destroy($id){
         $post = Post::findOrFail($id);
+        File::delete('media/'.$post->fig_name);
+        File::delete('media/mini/'.$post->fig_name);
         $post->delete();
         \Flash::success('記事を削除しました。');
         return redirect()->route('posts.index');
