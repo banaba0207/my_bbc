@@ -20,6 +20,7 @@
             <ul class="nav navbar-nav">
                 <li>{!! link_to_route('posts.index', '記事一覧') !!}</li>
                 <li>{!! link_to_route('posts.create', '新規記事作成') !!}</li>
+                <li>{!! link_to_route('posts.search', '記事検索', 'not_search') !!}</li>
             </ul>
 
         </div><!-- /.navbar-collapse -->

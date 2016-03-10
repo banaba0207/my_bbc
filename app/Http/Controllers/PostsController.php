@@ -111,7 +111,12 @@ class PostsController extends Controller
         return redirect()->route('posts.index');
     }
 
-    public function searchShow($word){
+    public function searchShow(){
+        if (!empty($_GET['word'])) {
+            $word = $_GET['word'];
+        }else {
+            $word = 'not_search';
+        }
         $posts = Post::where('title', 'like', '%'.$word.'%')
             ->orwhere('contributor', 'like', '%'.$word.'%')
             ->orwhere('body', 'like', '%'.$word.'%')

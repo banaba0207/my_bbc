@@ -6,6 +6,22 @@
     $maxid = count($posts) - 1;
     ?>
 
+    {{-- 検索フォーム --}}
+    <hr>
+    <form action="{{route('posts.search') }}">
+    <div class="input-group">
+    <input type="text" class="form-control" name="word">
+    <span class="input-group-btn">
+        <button class="btn btn-default" type="submit">
+        <i class='glyphicon glyphicon-search'></i>
+        </button>
+    </span>
+    </div>
+    </form>
+
+    @if ($word != 'not_search')
+
+    <br>
     検索語     : <font size='5' color='ff0000'>{{ $word }}</font>
     <br>
     ヒット件数 : <font size='5' color='ff0000'>{{ $maxid }}</font>
@@ -19,6 +35,8 @@
     検索語     : <font size='5' color='ff0000'>{{ $word }}</font>
     <br>
     ヒット件数 : <font size='5' color='ff0000'>{{ $maxid }}</font>
+    @endif
+    
     <hr>
 @endsection
 

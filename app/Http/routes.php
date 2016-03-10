@@ -13,8 +13,8 @@
 
 Route::group(['middleware' => ['web']], function () {
     Route::get('karaoke', 'KaraokeController@index');
+    Route::get('posts/search', ['as' => 'posts.search', 'uses' => 'PostsController@searchShow']);
     Route::resource('posts', 'PostsController');
-    Route::get('posts/search/{word}', 'PostsController@searchShow');
 });
 /*
 |--------------------------------------------------------------------------
