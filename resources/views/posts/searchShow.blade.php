@@ -10,7 +10,7 @@
     <hr>
     <form action="{{route('posts.search') }}">
     <div class="input-group">
-    <input type="text" class="form-control" name="word">
+    <input type="text" class="form-control" name="word" placeholder="キーワード">
     <span class="input-group-btn">
         <button class="btn btn-default" type="submit">
         <i class='glyphicon glyphicon-search'></i>
