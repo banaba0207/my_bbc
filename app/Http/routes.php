@@ -14,6 +14,7 @@
 Route::group(['middleware' => ['web']], function () {
     Route::get('karaoke', 'KaraokeController@index');
     Route::resource('posts', 'PostsController');
+    Route::get('posts/search/{word}', 'PostsController@searchShow');
 });
 /*
 |--------------------------------------------------------------------------

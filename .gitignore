@@ -7,4 +7,4 @@ Homestead.json
 .DS_Store
 *.jpg
 *.png
-/public/media
+/public/media/*

@@ -110,4 +110,12 @@ class PostsController extends Controller
         \Flash::success('記事を削除しました。');
         return redirect()->route('posts.index');
     }
+
+    public function searchShow($word){
+        $posts = Post::where('title', 'like', '%'.$word.'%')
+            ->orwhere('contributor', 'like', '%'.$word.'%')
+            ->orwhere('body', 'like', '%'.$word.'%')
+            ->get();
+        return view('posts.searchShow', compact('posts', 'word'));
+    }
 }
