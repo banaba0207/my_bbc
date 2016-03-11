@@ -1,3 +1,12 @@
+<?php
+    // ライブラリの読み込み
+    require_once 'src/Mobile_Detect.php';
+    // インスタンスの作成
+    $detect = new Mobile_Detect ;
+    // メソッドを実行する
+    $isMobile = $detect->isMobile() ;
+?>
+
 <post>
     @if ($post->res_id == 0)
         <div class="panel panel-default">
@@ -32,8 +41,13 @@
                 <div style="padding:10px">
                     <a href="{{ asset('media/'.$post->fig_name) }}"
                         data-lightbox="image-1" />
+                    @if ($isMobile === TRUE)
+                    <img src="{{ asset('media/mini/'.$post->fig_name) }}"
+                        alt="{{ $post->fig_name }}" height="200" width="200"/>
+                    @else
                     <img src="{{ asset('media/mini/'.$post->fig_name) }}"
                         alt="{{ $post->fig_name }}" height="400" width="400"/>
+                    @endif
                     </a>
                 </div>
             @endif

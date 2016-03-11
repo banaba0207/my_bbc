@@ -13,7 +13,8 @@
     }else {
         $show_num = 10;
     }
-    $maxid = count($posts) - 1;
+    $maxid = count($posts);
+    echo "総スレッド数 : ".$maxid;
     ?>
     @include('posts.my_pagenation', ['page' => $page, 'show_num' => $show_num])
     <hr>

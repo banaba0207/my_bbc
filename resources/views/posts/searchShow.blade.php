@@ -3,7 +3,7 @@
 @section('content')
     <h1>検索画面</h1>
     <?php
-    $maxid = count($posts) - 1;
+    $maxid = count($posts);
     ?>
 
     {{-- 検索フォーム --}}
