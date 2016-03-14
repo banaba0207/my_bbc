@@ -98,6 +98,7 @@ class PostsController extends Controller
     public function update($id, PostRequest $request){
         $post = Post::findOrFail($id);
         $post->update($request->all());
+        dd($request->fig_name);
         \Flash::success('記事を更新しました。');
         return redirect()->route('posts.show', [$post->pots_id]);
     }

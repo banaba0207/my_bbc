@@ -8,3 +8,4 @@ Homestead.json
 *.jpg
 *.png
 /public/media/*
+*php.ini*
